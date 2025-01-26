@@ -2,15 +2,15 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
-#Preprocessa il testo passato come parametro
+#This function preprocesses the text given in input
 def preprocess_text(text):
     stop_words = set(stopwords.words('english'))
     lemmatizer = WordNetLemmatizer()
 
-    #Tokenizzazione
+    #Split the text into tokens
     tokens = word_tokenize(text)
 
-    #Rimozione stop words e tokenizzazione
+    #Removing stop words and tokenizing them
     cleaned_tokens = [lemmatizer.lemmatize(word) for word in tokens if word.isalnum() and word not in stop_words]
 
     return cleaned_tokens
