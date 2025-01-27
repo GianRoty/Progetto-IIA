@@ -2,7 +2,12 @@
 
 The original documents are a collection of journals (pdf files) called “carteBollate”. Each journal issue consists of multiple stories written by prisoners e.g., about their life in prison. There are multiple issues per year spanning over a period from 2009 to 2024. The pdf files were processed into a csv file that provides a structured version of all the journals in textual format. The csv file that will be given to the students has the following columns (with descriptions):
 
-![Uploading immagine.png…]()
+# COLUMN NAME   DESCRIPTION
+      year      Year (number) - indicating the publication year of an journal/story
+      issue     Issue number - indicating the issue an article was published in within the respective year
+      topic     Name of the topic an article was assigned to by the publisher (articles are grouped by topic within each issue)
+      article   Headline of a specific article
+      text      Actual content of the article
 
 Tasks to process/analyze the articles:
 # For each task: group by (1) article (2) topic (3) issue (4) year. Compare between these groups and compare over time.
