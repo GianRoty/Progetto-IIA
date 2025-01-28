@@ -5,7 +5,7 @@ import ngram as ng
 import showing_details as sd
 import comparator as cmp
 import lexer as lex
-import sentiment_analyser as sa
+import sentiment_analyzer as sa
 
 df = pd.read_csv('../dataset/dataset.csv', sep=';')
 
@@ -45,6 +45,7 @@ keywordsTitleTable = []
 for i in range(df['article'].count()):
     extractKeyWordsArticleTitle = kw.extract_kw(df['article'][i])
     keywordsTitleTable.append(extractKeyWordsArticleTitle)
+print(keywordsTitleTable)
 
 print("\nGenerating n-grams")
 for i in range(df['article'].count()):
