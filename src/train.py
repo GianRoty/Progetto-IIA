@@ -4,10 +4,12 @@ import extractor_kw as kw
 import ngram as ng
 import showing_details as sd
 import comparator as cmp
+import lexer as lex
+import sentiment_analyser as sa
 
 df = pd.read_csv('../dataset/dataset.csv', sep=';')
 
-print("\nStep 1: Finding keywords (based on article text)\n")
+print("\nTask 1: Finding keywords (based on article text)\n")
 print("Preprocessing text")
 for i in range(df['text'].count()):
     preprocessing = pp.preprocess_text(df['text'][i])
@@ -22,18 +24,17 @@ print(keywordsTextTable)
 
 print("\nGenerating n-grams")
 for i in range(df['text'].count()):
-    answer = ng.generate_n_grams(df['text'][i])
-    print("Sentence after removing stopwords = {}".format(answer))
+    ngramResult = ng.generate_n_grams(df['text'][i])
+    print("Sentence after removing stopwords = {}".format(ngramResult))
 
 keywordsText = ""
 for i in range(len(keywordsTextTable)):
     for j in range(len(keywordsTextTable[i])):
         keywordsText = keywordsText + " " + keywordsTextTable[i][j]
-        print(keywordsText)
 
 answer = sd.generate_wordcloud(keywordsText)
 
-print("\nStep 2: Topic analysis (based on article title)\n")
+print("\nTask 2: Topic analysis (based on article title)\n")
 print("Preprocessing text")
 for i in range(df['article'].count()):
     preprocessing = pp.preprocess_text(df['article'][i])
@@ -45,12 +46,9 @@ for i in range(df['article'].count()):
     extractKeyWordsArticleTitle = kw.extract_kw(df['article'][i])
     keywordsTitleTable.append(extractKeyWordsArticleTitle)
 
-print(keywordsTitleTable)
-
 print("\nGenerating n-grams")
 for i in range(df['article'].count()):
-    answer = ng.generate_n_grams(df['article'][i])
-    print("Sentence after removing stopwords = {}".format(answer))
+    ngramResult = ng.generate_n_grams(df['article'][i])
 
 keywordsTitle = ""
 for i in range(len(keywordsTitleTable)):
@@ -60,3 +58,11 @@ for i in range(len(keywordsTitleTable)):
 answer = sd.generate_wordcloud(keywordsTitle)
 
 print("\nComparing keywords and article text")
+result = cmp.compare(keywordsTitle, keywordsText)
+print(result)
+
+print("\nTask 3: Lexical analysis")
+lex.analyse(keywordsTitle, keywordsText)
+
+print("\nTask 4: Sentiment analysis")
+sa.analyze_sentiment(keywordsText)
