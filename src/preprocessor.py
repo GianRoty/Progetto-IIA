@@ -4,7 +4,7 @@ from nltk.stem import WordNetLemmatizer
 
 #This function preprocesses the text given in input
 def preprocess_text(text):
-    stop_words = set(stopwords.words('english'))
+    stop_words = set(stopwords.words('italian'))
     lemmatizer = WordNetLemmatizer()
 
     #Split the text into tokens
