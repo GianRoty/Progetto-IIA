@@ -7,7 +7,7 @@ import comparator as cmp
 import lexer as lex
 import sentiment_analyzer as sa
 
-df = pd.read_csv('../dataset/dataset.csv', sep=';')
+df = pd.read_csv('../dataset/prison_corpus.tsv', sep='\t', header=0)
 
 print("\nTask 1: Finding keywords (based on article text)\n")
 print("Preprocessing text")
