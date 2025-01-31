@@ -27,10 +27,11 @@ for i in range(df['text'].count()):
     ngramResult = ng.generate_n_grams(df['text'][i])
     print("Sentence after removing stopwords = {}".format(ngramResult))
 
-keywordsText = ""
-for i in range(len(keywordsTextTable)):
+keywordsText = " ".join(keywordsTextTable)
+
+"""for i in range(len(keywordsTextTable)):
     for j in range(len(keywordsTextTable[i])):
-        keywordsText = keywordsText + " " + keywordsTextTable[i][j]
+        keywordsText = keywordsText + " " + keywordsTextTable[i][j]"""
 
 answer = sd.generate_wordcloud(keywordsText)
 
