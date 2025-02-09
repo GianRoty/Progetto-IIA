@@ -1,3 +1,7 @@
+Membri gruppo
+Andrea Magliani (894395)
+Gianluca Rota (904375)
+
 # LLM1DO Exploring Prisoners’ Voices: Keyword and Topics Analysis of CarteBollate Journals (2009-2024)
 
 The original documents are a collection of journals (pdf files) called “carteBollate”. Each journal issue consists of multiple stories written by prisoners e.g., about their life in prison. There are multiple issues per year spanning over a period from 2009 to 2024. The pdf files were processed into a csv file that provides a structured version of all the journals in textual format. The csv file that will be given to the students has the following columns (with descriptions):
