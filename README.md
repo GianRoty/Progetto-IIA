@@ -1,5 +1,7 @@
-Membri gruppo
+## Membri gruppo:
+
 Andrea Magliani (894395)
+
 Gianluca Rota (904375)
 
 # LLM1DO Exploring Prisoners’ Voices: Keyword and Topics Analysis of CarteBollate Journals (2009-2024)
